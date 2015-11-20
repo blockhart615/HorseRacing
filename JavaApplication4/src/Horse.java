@@ -3,7 +3,7 @@
  */
 import java.util.concurrent.locks.ReentrantLock;
 
-public class Racers implements Runnable {
+public class Horse implements Runnable {
     static ReentrantLock raceLock;
     private int speed, restFactor, distance, elapsedTime, laps;
     private long startTime;
@@ -11,7 +11,7 @@ public class Racers implements Runnable {
     static int place = 1;	//static variable to keep track of race results
 
     //initialize racers w/ a start speed and rest factor
-    public Racers(int iSpeed, int iRest) {
+    public Horse(int iSpeed, int iRest) {
         speed = iSpeed;
         restFactor = iRest;
     }
