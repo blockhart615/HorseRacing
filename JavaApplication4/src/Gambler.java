@@ -5,7 +5,10 @@ public class Gambler {
     String horseBet;
     String name = "";
     BankAccount account = new BankAccount();
-
+    
+    /**
+     * Default Constructor for a gambler
+     */
     public Gambler() {
         cash = 100;
         betAmount = 0;
@@ -13,37 +16,61 @@ public class Gambler {
         name = "Guest";
     }
 
-    //get cash
+    /**
+     * Get player's current cash
+     * @return cash
+     */
     public double getCash() {
         return cash;
     }
 
-    //Get Bet amount
+    /**
+     * get the player's bet amount
+     * @return betAmount
+     */
     public double getBetAmount() {
         return betAmount;
     }
 
-    //set Bet amount
-
+    /**
+     * SEt the Bet Amount
+     * @param amount 
+     */
     public void setBetAmount(double amount) {
-        if (amount > cash)
         betAmount = amount;
     }
 
-    //get horse#
+    /**
+     * get the horse the player bet on
+     * @return horse's name
+     */
     public String getHorseNumber() {
         return horseBet;
     }
 
-    //set horse##
+    /**
+     * Set the horse the player wants to bet on
+     * @param horse 
+     */
     public void setHorseNumber(String horse) {
         horseBet = horse;
     }
-
-    //Bet Multiplier
-    public void betMultiplier(int place) {
-        //if (horseBet)
-
+    
+    /**
+     * Calculate the earnings after the race has finished
+     * @param standing - list of horses and the order they placed
+     */
+    public void calculateReward(String[] standing){
+	double earnings = 0;
+	if (standing[0].equals(horseBet))
+	    earnings = betAmount * 3;
+	else if (standing[1].equals(horseBet))
+	    earnings = betAmount * 2;
+	else if (standing[2].equals(horseBet))
+	    earnings = betAmount * 1.5;
+	else 
+	    earnings = betAmount * -1;
+	cash = cash + earnings;
     }
 
 }
