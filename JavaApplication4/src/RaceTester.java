@@ -5,15 +5,15 @@ import java.util.Random;
 import java.io.IOException;
 
 public class RaceTester {
-
+    private static final Random rand = new Random();
+    
     public static void main(String[] args) {
 	//declarations
 	Scanner input = new Scanner(System.in);
 	int numRacers = 6, speed, restFactor;
 	double betAmount = 0;
 	Gambler player = new Gambler();
-	final double MIN_BET = 5;
-	Random rand = new Random();
+	final double MIN_BET = 5;	
 	Runnable r;
 	String name;
 	ArrayList<Thread> threadList = new ArrayList<Thread>();
