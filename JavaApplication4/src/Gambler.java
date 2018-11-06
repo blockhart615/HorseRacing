@@ -1,10 +1,10 @@
 
 public class Gambler {
 
-    double cash, betAmount;
-    String horseBet;
-    String name = "";
-    BankAccount account = new BankAccount();
+    private double cash, betAmount;
+    private String horseBet;
+    private String name = "";
+    private BankAccount account = new BankAccount();
     
     /**
      * Default Constructor for a gambler
