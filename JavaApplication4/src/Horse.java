@@ -6,13 +6,13 @@ import java.util.concurrent.locks.ReentrantLock;
 
 public class Horse implements Runnable {
 
-    static ReentrantLock raceLock;
+    private static ReentrantLock raceLock;
     private int speed, restFactor, distance,
 	    elapsedTime, laps, wins, losses, totalRaces;
-    double average = 0;
+    private double average = 0;
     private long startTime;
     private final int RACE_LENGTH = 1000, LAP_DIST = 400;
-    static int place = 1;	//static variable to keep track of race results
+    private static int place = 1;	//static variable to keep track of race results
 
     //initialize racers w/ a start speed and rest factor
     public Horse(int iSpeed, int iRest) {
